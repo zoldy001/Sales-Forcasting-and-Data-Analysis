@@ -23,20 +23,20 @@ This project utilized various Python libraries to handle data analysis and visua
 ## Dataset
 
 ## Exploratory Data Analysis (EDA)
+![plot](./img/image_1.png)
+<img src="./img/image_1.png" alt="Local Image" style="width:50%; height:auto;">
 
 1.	Impact of Holidays on Sales:
 	•	Easter holidays generate the highest daily sales, followed by public holidays and Christmas.
-	•	School holidays have a minor positive effect.
-	2.	Store Type and Assortment Influence:
-	•	Store type ‘b’ significantly outperforms others, with nearly 50% higher sales.
-	•	Stores with extra assortment generate the highest sales, indicating that a wider product range boosts performance.
-	3.	Promotions and Sales Variability:
-	•	Sales during promotional periods are nearly double (median: 7,000–8,000) compared to non-promotional periods (median: 4,000–5,000).
+2.	Store Type and Assortment Influence:
+	•	Store type ‘b’ has nearly 50% higher sales than other types
+	•	Stores with extra assortment generate the highest sales
+3.	Promotions and Sales Variability:
+	•	Sales nearly double during promotional periods 
 	•	Promotions lead to more consistent sales with less variance.
-	4.	Proximity to Competition:
+4.	Proximity to Competition:
 	•	Stores closer to competitors tend to perform slightly better, likely due to higher population density in these areas.
-	5.	Seasonality in Sales:
-	•	Monthly sales peak in January (around 8,500 units) and show an overall upward trend.
-	•	Fluctuations suggest seasonality, with occasional dips in October-November, likely influenced by promotions or post-holiday effects.
-	6.	Weekly Sales Patterns:
+5.	Seasonality in Sales:
+	•	Monthly sales peak in January
+6.	Weekly Sales Patterns:
 	•	Sales peak at the beginning of the week and taper off, with dramatic drops on Sundays when most stores are closed.
