@@ -33,17 +33,19 @@ This project utilized various Python libraries to handle data analysis and visua
 	•	Store type ‘b’ has nearly 50% higher sales than other types
 
 	•	Stores with extra assortment generate the highest sales
+ 	<img src="./img/image_2.png" alt="Local Image" style="width:70%; height:auto;">
 
-3.	**Promotions and Sales Variability:**
+
+4.	**Promotions and Sales Variability:**
     
 	•	Sales nearly double during promotional periods
 
 	•	Promotions lead to more consistent sales with less variance.
 
- 	<img src="./img/image_2.png" alt="Local Image" style="width:70%; height:auto;">
+ 	<img src="./img/image_3.png" alt="Local Image" style="width:70%; height:auto;">
  
 
-4.	**Proximity to Competition:**
+5.	**Proximity to Competition:**
     
 	•	Most stores are clustered close to the competition, highest and lowest performing stores
 
