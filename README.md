@@ -23,20 +23,30 @@ This project utilized various Python libraries to handle data analysis and visua
 ## Dataset
 
 ## Exploratory Data Analysis (EDA)
-![plot](./img/image_1.png)
-<img src="./img/image_1.png" alt="Local Image" style="width:50%; height:auto;">
+### Key takeaways:
+1.	**Impact of Holidays on Sales:**
+   
+	•	Easter holidays(b) generate the highest daily sales, followed by public holidays(a) and Christmas(c).
 
-1.	Impact of Holidays on Sales:
-	•	Easter holidays generate the highest daily sales, followed by public holidays and Christmas.
-2.	Store Type and Assortment Influence:
+2.	**Store Type and Assortment Influence:**
+   
 	•	Store type ‘b’ has nearly 50% higher sales than other types
+
 	•	Stores with extra assortment generate the highest sales
-3.	Promotions and Sales Variability:
-	•	Sales nearly double during promotional periods 
+
+3.	**Promotions and Sales Variability:**
+    
+	•	Sales nearly double during promotional periods
+
 	•	Promotions lead to more consistent sales with less variance.
-4.	Proximity to Competition:
-	•	Stores closer to competitors tend to perform slightly better, likely due to higher population density in these areas.
-5.	Seasonality in Sales:
-	•	Monthly sales peak in January
-6.	Weekly Sales Patterns:
-	•	Sales peak at the beginning of the week and taper off, with dramatic drops on Sundays when most stores are closed.
+
+ 	<img src="./img/image_2.png" alt="Local Image" style="width:70%; height:auto;">
+ 
+
+4.	**Proximity to Competition:**
+    
+	•	Most stores are clustered close to the competition, highest and lowest performing stores
+
+	•	This suggest that proximity to competition isn't necessarily bad for business
+   	 <img src="./img/image_1.png" alt="Local Image" style="width:70%; height:auto;">
+
