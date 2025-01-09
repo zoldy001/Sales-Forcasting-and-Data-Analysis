@@ -149,28 +149,18 @@ The model shows a positive correlation with actual sales but has noticeable scat
 
 <img src="./img/image_5.png" alt="Local Image" style="width:70%; height:auto;">
 
-## Conclusion
 
 ### Model Accuracy
 
-In conclusion, the XGBoost model significantly outperforms both Prophet and Linear Regression, achieving a strong 96% training accuracy and providing moderate forecasting error of approximately 11%. This indicates that the model effectively captures the patterns in the sales data and provides reliable predictions for future sales performance. Prophet, however, demonstrated the least accuracy, highlighting the importance of incorporating additional features beyond just time-based data for better forecasting.
+XGBoost model significantly outperforms both Prophet and Linear Regression, achieving a strong 96% training accuracy and providing moderate forecasting error of approximately 11%. This indicates that the model effectively captures the patterns in the sales data and provides reliable predictions for future sales performance. Prophet, however, demonstrated the least accuracy, highlighting the importance of incorporating additional features beyond just time-based data for better forecasting.
 
-### Business Recommendations
+## Recommendations
 
-**Expansion Strategy**
+Based on the insights and findings above, we would recommend the retail management team to consider the following:
 
-* Focus new store openings in high-density areas, regardless of competition
-* Convert more locations to store type 'b' format where feasible
-* Expand product assortment across stores, prioritizing lower-performing locations
-
-**Operational Optimization**
-
-* Adjust staffing and inventory for Monday peaks
-* Consider extending Sunday hours in high-traffic locations
-* Implement broader product assortment in stores showing growth potential
-  
-**Promotion Strategy**
-
-* More promotions in underperforming stores could lift sales
-* Time major promotions with holiday periods, especially Easter
-* Target promotions to counter slower sales days (Thursday-Saturday)
+- High-performing stores are clustered in competitive areas with 0-20,000 distance units, suggesting these are prime retail locations. **Prioritize expansion in high-density market areas rather than isolated locations, even if competition is present, as these locations show 4-5x higher sales potential.**
+- Promotional periods consistently drive 50%+ sales uplift with more predictable outcomes. **Develop a strategic promotional calendar focusing on key seasonal periods, particularly January post-holiday sales, with careful tracking of promotional ROI and margin impact.**
+- Type 'b' stores outperform other formats by 50%, and extra assortment stores show 30% higher sales than basic assortment locations. **Consider converting underperforming stores to type 'b' format and expanding product assortment where feasible, prioritizing locations with strong sales fundamentals.**
+- Easter holiday period generates the highest daily sales (10,000 units), significantly outperforming other holiday periods. **Develop specialized marketing and inventory strategies for Easter period, including targeted promotions and increased stock levels to capitalize on peak demand.**
+- Store proximity to competition correlates with higher sales variance and potential upside. **When evaluating new store locations, prioritize sites in retail clusters over isolated locations, and develop competitive differentiation strategies through assortment and promotional planning.**
+- Basic assortment stores consistently underperform compared to extended and extra assortment locations. **Evaluate opportunities to upgrade basic assortment stores to at least extended assortment level, focusing first on locations in high-density areas with strong competitive dynamics.**
