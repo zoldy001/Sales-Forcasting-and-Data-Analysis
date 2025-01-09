@@ -1,13 +1,12 @@
 # Sales Forcasting - Rossmann Store
 
-This project focuses on predicting future sales for Rossmann Stores using historical sales data. The dataset comprises historical sales data for 1,115 Rossmann stores, including additional contextual information such as promotions, holidays, and competition. TWe will use this data to build a robust forecasting model that provides accurate predictions of future 
-sales allowing optimisations of resource allocation and operational planning.
+Rossmann is a leading drugstore chain with over 3,000 stores across Europe. Rossmann relies on accurate sales forecasting to optimize operations and enhance customer satisfaction. This project combines predictive modeling with data analysis to address sales challenges and uncover actionable insights.
 
-The project is structured as follows:
+The primary objectives are:
+1.	**Forecasting Sales:** Develop machine learning models (Linear Regression, XGBoost, and Prophet) to predict six weeks of daily sales for 1,115 German stores, evaluated using MAE and RMSLE.
+2.	**Uncovering Key Drivers of Sales:**** Analyze feature importance and correlations within the dataset to identify the factors most strongly associated with sales performance
 
-* Exploratory Data Analysis (EDA): Uncover patterns and identify key factors that influence sales performance.
-* Model Development and Optimization: Train and fine-tune machine learning models to accurately forecast future sales.
-* Business Recommendations: Translate insights into practical strategies to improve sales outcomes.
+Using historical sales and store data, the project will deliver forecasts and recommendations, enabling Rossmann to optimize promotions, resource allocation, and operational planning for improved sales performance.
 
 #### How to View This Project 
 This README contains an overview of a data analysis and sales forcasting project, full version and insights are withing the Jupyter Notebook
@@ -24,35 +23,106 @@ This project utilized various Python libraries to handle data analysis and visua
 
 ## Dataset
 
-## Exploratory Data Analysis (EDA)
-### Key takeaways:
-1.	**Impact of Holidays on Sales:**
-   
-	•	Easter holidays(b) generate the highest daily sales, followed by public holidays(a) and Christmas(c).
+The Rossmann dataset comprises three tables that collectively provide data for sales forecasting:
+1.	**Train Table:** The train table serves as the primary dataset for model training. It contains daily transaction records, including sales figures and other relevant features. This table consists of 1,017,209 records.
+2.	**Test Table:** The test table includes transaction records similar to the train table but excludes the sales column. The task is to forecast the missing sales values for these records. This table contains 41,088 records.
+3.	**Store Table:** The store table provides additional descriptive information about each store, such as location and characteristics. It can be joined with the train and test tables using the Store column. This table contains 1,115 records.
 
-2.	**Store Type and Assortment Influence:**
-   
-	•	Store type ‘b’ has nearly 50% higher sales than other types
+<table>
+<tr>
+<td width="33%">
 
-	•	Stores with extra assortment generate the highest sales
- 	<img src="./img/image_2.png" alt="Local Image" style="width:70%; height:auto;">
+### Test Data
+| Column         | Data Type   |
+|----------------|-------------|
+| Id             | int64       |
+| Store          | int64       |
+| DayOfWeek      | int64       |
+| Date           | object      |
+| Open           | float64     |
+| Promo          | int64       |
+| StateHoliday   | object      |
+| SchoolHoliday  | int64       |
 
+</td>
+<td width="33%">
 
-4.	**Promotions and Sales Variability:**
-    
-	•	Median sales nearly double during promotional periods
+### Train Data
+| Column         | Data Type   |
+|----------------|-------------|
+| Store          | int64       |
+| DayOfWeek      | int64       |
+| Date           | object      |
+| Sales          | int64       |
+| Customers      | int64       |
+| Open           | int64       |
+| Promo          | int64       |
+| StateHoliday   | object      |
+| SchoolHoliday  | int64       |
 
-	•	Promotions lead to more consistent sales with less variance.
+</td>
+<td width="33%">
 
- 	<img src="./img/image_3.png" alt="Local Image" style="width:70%; height:auto;">
- 
+### Store Data
+| Column                     | Data Type   |
+|---------------------------|-------------|
+| Store                     | int64       |
+| StoreType                 | object      |
+| Assortment                | object      |
+| CompetitionDistance       | float64     |
+| CompetitionOpenSinceMonth | float64     |
+| CompetitionOpenSinceYear  | float64     |
+| Promo2                    | int64       |
+| Promo2SinceWeek          | float64     |
+| Promo2SinceYear          | float64     |
+| PromoInterval            | object      |
 
-5.	**Proximity to Competition:**
-    
-	•	Most stores are clustered close to the competition, highest and lowest performing stores
+</td>
+</tr>
+</table>
 
-	•	This suggest that proximity to competition isn't necessarily bad for business
-   	 <img src="./img/image_1.png" alt="Local Image" style="width:70%; height:auto;">
+Before beggining analyisis, the dataset was cleaned and null values accounted for.
+
+## Executive Summary
+
+### Overview of Findings
+
+Sales peak in **January,** driven by seasonality and holiday promotions, with a general upward trend despite fluctuations. Promotions significantly boost sales, increasing the median from 4,000–5,000 units during non-promotional periods to 7,000–8,000 units, while also reducing variance. **Store type** and **product assortment** have the largest impact on performance, with type ‘b’ stores and extra assortments generating the highest revenue.
+
+These findings suggest that the main levers for boosting sales and driving growth are: promotions, expanding product assortments, and optimizing high-performing store types.
+
+## Insights Deep Dive
+### Store Performance & Location:
+
+- **Competition proximity drives higher sales.** Stores located closer to competition (0-20,000 distance units) show the highest sales variance, with top performers reaching 2M units and lowest around 250K units, suggesting prime locations can support multiple stores.
+
+- **Optimal market density supports growth.** The slight negative correlation between distance and sales suggests that being in high-density market areas outweighs competitive pressures, as evidenced by the clustering of high-performing stores in competitive zones.
+
+- **Location strategy impacts revenue potential.** While distant stores (>100,000 units from competition) show consistent sales around 400-500K units, they lack the upside potential seen in competitive areas where top performers achieve 4-5x higher sales.
+  
+	<img src="./img/image_1.png" alt="Local Image" style="width:70%; height:auto;">
+
+### Store Format & Assortment:
+- **Type 'b' stores significantly outperform.** These stores average 10,000+ units in sales, nearly 50% higher than other store types which cluster around 6,500-7,000 units.
+- **Extra assortment drives higher sales.** Stores with extra assortment (b) consistently outperform both extended (c) and basic (a) assortment levels, with sales approximately 30% higher than basic assortment stores.
+- **Assortment level correlates with performance.** There's a clear hierarchy where expanding product range leads to higher sales, suggesting inventory diversity is a key growth lever.
+
+	<img src="./img/store.png" alt="Local Image" style="width:70%; height:auto;">
+
+### Promotional Impact:
+
+- **Promotions drive 50%+ sales uplift.** Median sales during promotional periods reach 7,000-8,000 units compared to 4,000-5,000 units in non-promotional periods, demonstrating significant revenue impact.
+- **Promotional periods show better consistency.** The tighter distribution in the violin plot during promotional periods (1) indicates more predictable sales outcomes compared to non-promotional periods.
+- **Higher sales floor during promotions.** The minimum sales during promotional periods start at a higher baseline, suggesting promotions help maintain a more stable revenue stream.
+
+	<img src="./img/image_3.png" alt="Local Image" style="width:70%; height:auto;">
+  
+### Seasonal & Holiday Effects:
+- **January peaks dominate annual cycle.** The time series shows consistent January sales peaks reaching 8,500 units, likely driven by post-holiday promotions and seasonal shopping patterns.
+- **Easter holiday premium.** Type 'b' state holidays (Easter) generate the highest daily sales averaging 10,000 units, outperforming both Christmas and public holidays.
+- **School holidays show modest impact.** School holiday periods show only a slight sales increase of approximately 200 units (from ~6,900 to ~7,100), indicating limited direct influence on purchasing patterns.
+
+	<img src="./img/holiday.png" alt="Local Image" style="width:70%; height:auto;">
 
 ## Model Development
 
