@@ -1,4 +1,4 @@
-# Sales Forcasting - Rossmann Store
+# Sales Forecasting - Rossmann Store
 
 Rossmann is a leading drugstore chain with over 3,000 stores across Europe. Rossmann relies on accurate sales forecasting to optimize operations and enhance customer satisfaction. This project combines predictive modeling with data analysis to address sales challenges and uncover actionable insights.
 
@@ -9,7 +9,7 @@ The primary objectives are:
 Using historical sales and store data, the project will deliver forecasts and recommendations, enabling Rossmann to optimize promotions, resource allocation, and operational planning for improved sales performance.
 
 #### How to View This Project 
-This README contains an overview of a data analysis and sales forcasting project, full version and insights are withing the Jupyter Notebook
+This README contains an overview of a data analysis and sales forecasting project, full version and insights are withing the Jupyter Notebook
 
 **To view it:** Open the notebook directly on GitHub (.ipynb file).
 
