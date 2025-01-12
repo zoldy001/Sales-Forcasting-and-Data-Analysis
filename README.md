@@ -89,7 +89,7 @@ Before beggining analyisis, the dataset was cleaned and null values accounted fo
 
 Sales peak in **January,** driven by seasonality and holiday promotions, with a general upward trend despite fluctuations. Promotions significantly boost sales, increasing the median from 4,000–5,000 units during non-promotional periods to 7,000–8,000 units, while also reducing variance. **Store type** and **product assortment** have the largest impact on performance, with type ‘b’ stores and extra assortments generating the highest revenue.
 
-These findings suggest that the main levers for boosting sales and driving growth are: promotions, expanding product assortments, and optimizing high-performing store types.
+The main levers for boosting sales and driving growth are: promotions, expanding product assortments, and optimizing high-performing store types.
 
 ## Insights Deep Dive
 ### Store Performance & Location:
